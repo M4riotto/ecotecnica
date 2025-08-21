@@ -7,11 +7,16 @@
       <title>Página Inicial</title>
       <!-- Tailwind CDN -->
       <script src="https://cdn.tailwindcss.com"></script>
+      <!-- Swiper + GLightbox (CSS) -->
+      <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
 </head>
 <style>
       html {
-  scroll-behavior: smooth;
-}
+            scroll-behavior: smooth;
+      }
+
       .bg-ecored {
             background-color: #e63946;
             /* exemplo vermelho */
@@ -34,7 +39,8 @@
             <div class="container mx-auto px-4 flex justify-between items-center">
                   <div class="flex items-center">
                         <h1 class="text-2xl font-bold">
-                              <span id="eco" class="text-ecored">Eco</span><span id="tecnica" class="text-white">Tecnica</span>
+                              <span id="eco" class="text-ecored">Eco</span><span id="tecnica"
+                                    class="text-white">Tecnica</span>
                         </h1>
                   </div>
 
@@ -86,9 +92,9 @@
                         <source src="68292995e67d6.mp4" type="video/mp4" />
                         Seu navegador não suporta vídeos HTML5.
                   </video>
-                  
-  <!-- Overlay escuro por cima do vídeo -->
-  <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 z-0"></div>
+
+                  <!-- Overlay escuro por cima do vídeo -->
+                  <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 z-0"></div>
                   <div class="container mx-auto px-4 py-24 z-10">
                         <div class="max-w-3xl mx-auto text-center text-white">
                               <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
@@ -453,6 +459,122 @@
             </section>
 
 
+            <!-- ===== GALERIA (colocar entre #services e a próxima seção) ===== -->
+            <section id="galeria" class="py-20 bg-white">
+                  <div class="container mx-auto px-4">
+                        <!-- Header -->
+                        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+                              <div>
+                                    <h2 class="text-3xl md:text-4xl font-bold">
+                                          Nossa <span class="text-ecored">Galeria</span>
+                                    </h2>
+                                    <p class="text-gray-600 mt-2">Projetos e registros de campo — clique para ampliar.
+                                    </p>
+                              </div>
+                              <div class="flex items-center gap-2">
+                                    <button class="gal-prev border px-3 py-2 rounded hover:bg-gray-50"
+                                          aria-label="Anterior">‹</button>
+                                    <button class="gal-next border px-3 py-2 rounded hover:bg-gray-50"
+                                          aria-label="Próximo">›</button>
+                              </div>
+                        </div>
+
+                        <!-- Carrossel principal -->
+                        <div class="swiper gallery-main rounded-2xl shadow-md">
+                              <div class="swiper-wrapper">
+
+                                    <!-- SLIDE 1 -->
+                                    <div class="swiper-slide">
+                                          <a href="./jobs/foto1.jpg"
+                                                class="glightbox block" data-gallery="ecogallery"
+                                                data-title="Tratamento em área industrial">
+                                                <img src="./jobs/foto1.jpg"
+                                                      alt="Tratamento em área industrial"
+                                                      class="w-full aspect-[16/9] object-cover rounded-2xl"
+                                                      loading="lazy">
+                                          </a>
+                                    </div>
+
+                                    <!-- SLIDE 2 -->
+                                    <div class="swiper-slide">
+                                          
+                                          <a href="./jobs/foto2.jpg"
+                                                class="glightbox block" data-gallery="ecogallery"
+                                                data-title="Equipe em operação noturna">
+                                                <img src="./jobs/foto2.jpg"
+                                                      alt="Equipe em operação noturna"
+                                                      class="w-full aspect-[16/9] object-cover rounded-2xl"
+                                                      loading="lazy">
+                                          </a>
+                                    </div>
+
+                                    <!-- SLIDE 3 -->
+                                    <div class="swiper-slide">
+                                          <a href="./jobs/foto3.jpg"
+                                                class="glightbox block" data-gallery="ecogallery"
+                                                data-title="Higienização de ambientes">
+                                                <img src="./jobs/foto3.jpg"
+                                                      alt="Higienização de ambientes"
+                                                      class="w-full aspect-[16/9] object-cover rounded-2xl"
+                                                      loading="lazy">
+                                          </a>
+                                    </div>
+                                    
+                                    <!-- SLIDE 4 -->
+                                    <div class="swiper-slide">
+                                          <a href="./jobs/foto4.jpg"
+                                                class="glightbox block" data-gallery="ecogallery"
+                                                data-title="Higienização de ambientes">
+                                                <img src="./jobs/foto4.jpg"
+                                                      alt="Higienização de ambientes"
+                                                      class="w-full aspect-[16/9] object-cover rounded-2xl"
+                                                      loading="lazy">
+                                          </a>
+                                    </div>
+
+                                    <!-- Duplique blocos .swiper-slide para adicionar mais fotos -->
+                              </div>
+
+                              <!-- Paginação (pontinhos) -->
+                              <div class="swiper-pagination"></div>
+                        </div>
+
+                        <!-- Thumbs -->
+                        <div class="swiper gallery-thumbs mt-4">
+                              <div class="swiper-wrapper">
+                                    <!-- THUMB 1 -->
+                                    <div class="swiper-slide opacity-70 hover:opacity-100 transition">
+                                          <img src="./jobs/foto1.jpg"
+                                                alt="Thumb 1"
+                                                class="w-full aspect-[4/3] object-cover rounded-xl border">
+                                    </div>
+                                    <!-- THUMB 2 -->
+                                    <div class="swiper-slide opacity-70 hover:opacity-100 transition">
+                                          <img src="./jobs/foto2.jpg"
+                                                alt="Thumb 2"
+                                                class="w-full aspect-[4/3] object-cover rounded-xl border">
+                                    </div>
+                                    <!-- THUMB 3 -->
+                                    <div class="swiper-slide opacity-70 hover:opacity-100 transition">
+                                          <img src="./jobs/foto3.jpg"
+                                                alt="Thumb 3"
+                                                class="w-full aspect-[4/3] object-cover rounded-xl border">
+                                    </div>
+                                    <!-- THUMB 4 -->
+                                    <div class="swiper-slide opacity-70 hover:opacity-100 transition">
+                                          <img src="./jobs/foto4.jpg"
+                                                alt="Thumb 3"
+                                                class="w-full aspect-[4/3] object-cover rounded-xl border">
+                                    </div>
+
+                                    <!-- Duplique para novas thumbs, mantendo a mesma ordem dos slides -->
+                              </div>
+                        </div>
+                  </div>
+            </section>
+            <!-- ===== /GALERIA ===== -->
+
+
             <!-- Componente TestimonialsSection -->
             <section id="testimonials" class="py-20  mx-auto px-4 bg-gray-100">
                   <!-- Header -->
@@ -805,6 +927,52 @@
 
 
 </body>
+
+<!-- Swiper + GLightbox (JS) -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+<script>
+      // Thumbs
+      const thumbs = new Swiper('.gallery-thumbs', {
+            slidesPerView: 3.2,
+            spaceBetween: 12,
+            watchSlidesProgress: true,
+            breakpoints: {
+                  640: { slidesPerView: 5, spaceBetween: 12 },
+                  1024: { slidesPerView: 6, spaceBetween: 14 },
+                  1280: { slidesPerView: 8, spaceBetween: 16 },
+            },
+      });
+
+      // Principal
+      const main = new Swiper('.gallery-main', {
+            slidesPerView: 1,
+            spaceBetween: 16,
+            loop: false,
+            grabCursor: true,
+            navigation: {
+                  nextEl: '.gal-next',
+                  prevEl: '.gal-prev',
+            },
+            pagination: {
+                  el: '.swiper-pagination',
+                  clickable: true,
+            },
+            thumbs: { swiper: thumbs },
+            // desempenho
+            preloadImages: false,
+            lazy: { loadPrevNext: true, loadOnTransitionStart: true },
+      });
+
+      // Lightbox
+      const lightbox = GLightbox({
+            selector: '.glightbox',
+            touchNavigation: true,
+            loop: true
+      });
+</script>
+
 
 <script>
       const navbar = document.getElementById('navbar');
